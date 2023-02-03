@@ -17,8 +17,7 @@ class SimpleReport:
         companies_list = Counter(companies).most_common()[0][0]
 
         return (
-            f"""Data de fabricação mais antiga: {manufacturing_date
-            ['data_de_fabricacao']}
-            Data de validade mais próxima: {expiration_date
-            ['data_de_validade']}
-            Empresa com mais produtos: {companies_list}""")
+
+            f"""Data de fabricação mais antiga: {manufacturing_date['data_de_fabricacao']}
+Data de validade mais próxima: {expiration_date['data_de_validade']}
+Empresa com mais produtos: {companies_list}""")
