@@ -1,5 +1,6 @@
 import csv
 import json
+import xmltodict
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 
@@ -19,3 +20,6 @@ class Inventory:
                 return list(csv.DictReader(inventory))
             if path.endswith(".json"):
                 return json.load(inventory)
+            xml = xmltodict.parse(inventory.read())
+            data = xml["dataset"]["record"]
+            return list(dict(i) for i in data)
